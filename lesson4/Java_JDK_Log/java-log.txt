@@ -1,0 +1,47 @@
+Script started on 2025-09-28 08:15:39+00:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="80" LINES="24"]
+[?2004h]0;user@DevOpsBasics: ~/codeby-devops/lesson4/Java_JDK_Log[01;32muser@DevOpsBasics[00m:[01;34m~/codeby-devops/lesson4/Java_JDK_Log[00m$ update-alternatives --config java[A]0;user@DevOpsBasics: ~/codeby-devops/lesson4/Java_JDK_Log[01;32muser@DevOpsBasics[00m:[01;34m~/codeby-devops/lesson4/Java_JDK_Log[00m$ [3Pscript silent_top.log
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cupdate-alternatives --config java[A]0;user@DevOpsBasics: ~/codeby-devops/lesson4/Java_JDK_Log[01;32muser@DevOpsBasics[00m:[01;34m~/codeby-devops/lesson4/Java_JDK_Log[00m$ [K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cupdate-alternatives --config java[A]0;user@DevOpsBasics: ~/codeby-devops/lesson4/Java_JDK_Log[01;32muser@DevOpsBasics[00m:[01;34m~/codeby-devops/lesson4/Java_JDK_Log[00m$ [3Pscript silent_top.log
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd lesson4/Procces_logs/ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmc[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd lesson4/Procces_logs/ [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[3Pscript silent_top.log
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cupdate-alternatives --config java[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csupdate-alternatives --co[1@n[A]0;user@DevOpsBasics: ~/codeby-devops/lesson4/Java_JDK_Log[01;32muser@DevOpsBasics[00m:[01;34m~/codeby-devops/lesson4/Java_JDK_Log[00m$ [C[Cupdate-alternatives --c[1@o[A]0;user@DevOpsBasics: ~/codeby-devops/lesson4/Java_JDK_Log[01;32muser@DevOpsBasics[00m:[01;34m~/codeby-devops/lesson4/Java_JDK_Log[00m$ [C[Cdupdate-alternatives --[1@c[A]0;user@DevOpsBasics: ~/codeby-devops/lesson4/Java_JDK_Log[01;32muser@DevOpsBasics[00m:[01;34m~/codeby-devops/lesson4/Java_JDK_Log[00m$ [C[C[Coupdate-alternatives -[1@-[A]0;user@DevOpsBasics: ~/codeby-devops/lesson4/Java_JDK_Log[01;32muser@DevOpsBasics[00m:[01;34m~/codeby-devops/lesson4/Java_JDK_Log[00m$ [C[C[C[C update-alternatives [C[1@-[A]0;user@DevOpsBasics: ~/codeby-devops/lesson4/Java_JDK_Log[01;32muser@DevOpsBasics[00m:[01;34m~/codeby-devops/lesson4/Java_JDK_Log[00m$ [C[C[C[C[C
+
+[?2004l[sudo] password for user: 
+There are 3 choices for the alternative java (providing /usr/bin/java).
+
+  Selection    Path                                            Priority   Status
+------------------------------------------------------------
+  0            /usr/lib/jvm/java-21-openjdk-amd64/bin/java      2111      auto mode
+  1            /usr/lib/jvm/java-11-openjdk-amd64/bin/java      1111      manual mode
+* 2            /usr/lib/jvm/java-21-openjdk-amd64/bin/java      2111      manual mode
+  3            /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java   1081      manual mode
+
+Press <enter> to keep the current choice[*], or type selection number: 3
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java to provide /usr/bin/java (java) in manual mode
+[?2004h]0;user@DevOpsBasics: ~/codeby-devops/lesson4/Java_JDK_Log[01;32muser@DevOpsBasics[00m:[01;34m~/codeby-devops/lesson4/Java_JDK_Log[00m$ sudo update-alternatives --config java
+[?2004lThere are 3 choices for the alternative java (providing /usr/bin/java).
+
+  Selection    Path                                            Priority   Status
+------------------------------------------------------------
+  0            /usr/lib/jvm/java-21-openjdk-amd64/bin/java      2111      auto mode
+  1            /usr/lib/jvm/java-11-openjdk-amd64/bin/java      1111      manual mode
+  2            /usr/lib/jvm/java-21-openjdk-amd64/bin/java      2111      manual mode
+* 3            /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java   1081      manual mode
+
+Press <enter> to keep the current choice[*], or type selection number: 0
+update-alternatives: using /usr/lib/jvm/java-21-openjdk-amd64/bin/java to provide /usr/bin/java (java) in auto mode
+[?2004h]0;user@DevOpsBasics: ~/codeby-devops/lesson4/Java_JDK_Log[01;32muser@DevOpsBasics[00m:[01;34m~/codeby-devops/lesson4/Java_JDK_Log[00m$ sudo update-alternatives --config java
+[?2004lThere are 3 choices for the alternative java (providing /usr/bin/java).
+
+  Selection    Path                                            Priority   Status
+------------------------------------------------------------
+* 0            /usr/lib/jvm/java-21-openjdk-amd64/bin/java      2111      auto mode
+  1            /usr/lib/jvm/java-11-openjdk-amd64/bin/java      1111      manual mode
+  2            /usr/lib/jvm/java-21-openjdk-amd64/bin/java      2111      manual mode
+  3            /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java   1081      manual mode
+
+Press <enter> to keep the current choice[*], or type selection number: 2
+[?2004h]0;user@DevOpsBasics: ~/codeby-devops/lesson4/Java_JDK_Log[01;32muser@DevOpsBasics[00m:[01;34m~/codeby-devops/lesson4/Java_JDK_Log[00m$ [?2004l
+exit
+
+Script done on 2025-09-28 08:16:09+00:00 [COMMAND_EXIT_CODE="0"]
