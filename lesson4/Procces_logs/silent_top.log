@@ -1,0 +1,26 @@
+Script started on 2025-09-28 07:40:28+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="25"]
+[?2004h]0;user@DevOpsBasics: ~/codeby-devops/lesson4/Procces_logs[01;32muser@DevOpsBasics[00m:[01;34m~/codeby-devops/lesson4/Procces_logs[00m$ llcd codeby-devops/[Knano 99-custom-message [5Pssh user@10.0.2.15[11Pu userdo chmod +x 99-custom-message [A]0;user@DevOpsBasics: ~/codeby-devops/lesson4/Procces_logs[01;32muser@DevOpsBasics[00m:[01;34m~/codeby-devops/lesson4/Procces_logs[00m$ [C[C[C[C[Cnano 99-custom-message[K[A]0;user@DevOpsBasics: ~/codeby-devops/lesson4/Procces_logs[01;32muser@DevOpsBasics[00m:[01;34m~/codeby-devops/lesson4/Procces_logs[00m$ [2Pcd /etc/update-motd.d/
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmc[Ksudo nano /etc/motd.tail [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmc[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csudo apt updatemc[Ksudo apt updatemc[Ksudo nano /etc/motd.tail [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmc[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd /etc/update-motd.d/sudo nano 99-custom-message[A]0;user@DevOpsBasics: ~/codeby-devops/lesson4/Procces_logs[01;32muser@DevOpsBasics[00m:[01;34m~/codeby-devops/lesson4/Procces_logs[00m$ [C[C[C[C[Cchmod +x 99-custom-message [A]0;user@DevOpsBasics: ~/codeby-devops/lesson4/Procces_logs[01;32muser@DevOpsBasics[00m:[01;34m~/codeby-devops/lesson4/Procces_logs[00m$ [C[C user[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csh user@10.0.2.15nano 99-custom-message cd[K codeby-devops/ll[K[Kllcd codeby-devops/[Knano 99-custom-message cd[K codeby-devops/ll[K[Ktop &
+[?2004l[1] 6204
+[?2004h]0;user@DevOpsBasics: ~/codeby-devops/lesson4/Procces_logs[01;32muser@DevOpsBasics[00m:[01;34m~/codeby-devops/lesson4/Procces_logs[00m$ [?1l>kill %1
+[?2004l
+[?1l>
+[1]+  Stopped                 top
+[?2004h]0;user@DevOpsBasics: ~/codeby-devops/lesson4/Procces_logs[01;32muser@DevOpsBasics[00m:[01;34m~/codeby-devops/lesson4/Procces_logs[00m$ ^C[?2004l
+[?2004h[?2004l
+
+[1]+  Done                    top
+[?2004h]0;user@DevOpsBasics: ~/codeby-devops/lesson4/Procces_logs[01;32muser@DevOpsBasics[00m:[01;34m~/codeby-devops/lesson4/Procces_logs[00m$ ^C[?2004l
+[?2004h[?2004l
+
+[?2004h]0;user@DevOpsBasics: ~/codeby-devops/lesson4/Procces_logs[01;32muser@DevOpsBasics[00m:[01;34m~/codeby-devops/lesson4/Procces_logs[00m$ ^C[?2004l
+[?2004h[?2004l
+
+[?2004h]0;user@DevOpsBasics: ~/codeby-devops/lesson4/Procces_logs[01;32muser@DevOpsBasics[00m:[01;34m~/codeby-devops/lesson4/Procces_logs[00m$ ^C[?2004l
+[?2004h[?2004l
+
+[?2004h]0;user@DevOpsBasics: ~/codeby-devops/lesson4/Procces_logs[01;32muser@DevOpsBasics[00m:[01;34m~/codeby-devops/lesson4/Procces_logs[00m$ [?2004l
+[?2004h]0;user@DevOpsBasics: ~/codeby-devops/lesson4/Procces_logs[01;32muser@DevOpsBasics[00m:[01;34m~/
