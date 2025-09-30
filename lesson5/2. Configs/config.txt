@@ -1,0 +1,17 @@
+user@DevOpsBasics:~$ sudo iptables -A INPUT -p icmp --icmp-type echo-request -j DROP
+user@DevOpsBasics:~$ sudo iptables -L
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination         
+DROP       icmp --  anywhere             anywhere             icmp echo-request
+
+Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination         
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination     
+
+=======================PINGS STATISTICS=====================================================
+--- 172.21.34.230 ping statistics ---
+105 packets transmitted, 50 received, 52.381% packet loss, time 110345ms
+rtt min/avg/max/mdev = 0.231/0.340/0.827/0.093 ms
+
