@@ -1,0 +1,18 @@
+******
+******
+
+# Authentication:
+
+#LoginGraceTime 2m
+#PermitRootLogin prohibit-password
+#StrictModes yes
+#MaxAuthTries 6
+#MaxSessions 10
+
+AllowUsers user@172.21.34.230
+
+#PubkeyAuthentication yes
+
+******
+******
+
