@@ -1,0 +1,23 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+hosts = {
+	"client" => "192.168.137.10",
+	"server" => "192.168.137.12"
+}
+
+Vagrant.configure("2") do |config|
+		config.vm.box = "bento/ubuntu-20.04"
+	hosts.each do |name, ip|
+			config.vm.define name do |machine|
+				#machine.vm.network "bridged", interface: "Intel(R) Dual Band Wireless-AC 7265"
+				machine.vm.provider "virtualbox" do |v|
+					v.name = name
+						v.gui = false
+						v.memory = "1024"
+						v.cpus = 1
+				end
+			end
+				config.vm.provision "shell", path: "provision.sh"
+					config.vm.network "forwarded_port", guest: 80, host: 8001
+	end
+end
