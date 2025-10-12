@@ -1,0 +1,445 @@
+Script started on 2025-10-12 13:58:19+07:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="91" LINES="24"]
+]0;user@user-VirtualBox: ~user@user-VirtualBox:~$sudo lxd init
+[sudo] password for user: 
+Would you like to use LXD clustering? (yes/no) [default=no]: 
+Do you want to configure a new storage pool? (yes/no) [default=yes]: 
+Name of the new storage pool [default=default]: 
+Name of the storage backend to use (dir, powerflex, pure, btrfs, ceph, lvm, zfs) [default=zfs]: 
+Create a new ZFS pool? (yes/no) [default=yes]: 
+Would you like to use an existing empty block device (e.g. a disk or partition)? (yes/no) [default=no]: 
+Size in GiB of the new loop device (1GiB minimum) [default=10GiB]: 1
+Would you like to connect to a MAAS server? (yes/no) [default=no]: 
+Would you like to create a new local network bridge? (yes/no) [default=yes]: 
+What should the new bridge be called? [default=lxdbr0]: 
+What IPv4 address should be used? (CIDR subnet notation, “auto” or “none”) [default=auto]: 
+What IPv6 address should be used? (CIDR subnet notation, “auto” or “none”) [default=auto]: 
+Would you like the LXD server to be available over the network? (yes/no) [default=no]: yes
+Address to bind LXD to (not including port) [default=all]: 
+Port to bind LXD to [default=8443]: 
+Would you like stale cached images to be updated automatically? (yes/no) [default=yes]: 
+Would you like a YAML "lxd init" preseed to be printed? (yes/no) [default=no]: 
+]0;user@user-VirtualBox: ~user@user-VirtualBox:~$sudo lxc launch ubuntu:22.04 my-container
+Launching my-container
+
+Retrieving image: metadata: 100% (787.76MB/s)
+                                              
+Retrieving image: rootfs: 1% (1.55MB/s)
+                                              
+Retrieving image: rootfs: 2% (1.71MB/s)
+                                              
+Retrieving image: rootfs: 3% (1.78MB/s)
+                                              
+Retrieving image: rootfs: 4% (1.80MB/s)
+                                              
+Retrieving image: rootfs: 5% (1.76MB/s)
+                                              
+Retrieving image: rootfs: 6% (1.78MB/s)
+                                              
+Retrieving image: rootfs: 7% (1.79MB/s)
+                                              
+Retrieving image: rootfs: 8% (1.76MB/s)
+                                              
+Retrieving image: rootfs: 9% (1.57MB/s)
+                                              
+Retrieving image: rootfs: 10% (1.50MB/s)
+                                              
+Retrieving image: rootfs: 10% (1.49MB/s)
+                                              
+Retrieving image: rootfs: 11% (1.48MB/s)
+                                              
+Retrieving image: rootfs: 12% (1.46MB/s)
+                                              
+Retrieving image: rootfs: 13% (1.44MB/s)
+                                              
+Retrieving image: rootfs: 14% (1.43MB/s)
+                                              
+Retrieving image: rootfs: 15% (1.42MB/s)
+                                              
+Retrieving image: rootfs: 16% (1.41MB/s)
+                                              
+Retrieving image: rootfs: 17% (1.42MB/s)
+                                              
+Retrieving image: rootfs: 18% (1.44MB/s)
+                                              
+Retrieving image: rootfs: 19% (1.46MB/s)
+                                              
+Retrieving image: rootfs: 19% (1.48MB/s)
+                                              
+***
+                                              
+Retrieving image: rootfs: 100% (1.65MB/s)
+Retrieving image: Unpacking image: 100% (793.83MB/s)
+                                                     
+]0;user@user-VirtualBox~$     lxc exec my-container -- bash
+To start your first container, try: lxc launch ubuntu:24.04
+Or for a virtual machine: lxc launch ubuntu:24.04 --vm
+
+[?2004h]0;root@my-container: ~root@my-container:~# ip a
+[?2004l
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+5: eth0@if6: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 00:16:3e:64:22:a8 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet 10.0.152.101/24 metric 100 brd 10.0.152.255 scope global dynamic eth0
+       valid_lft 3589sec preferred_lft 3589sec
+    inet6 fd42:e78d:9594:115b:216:3eff:fe64:22a8/64 scope global mngtmpaddr noprefixroute 
+       valid_lft forever preferred_lft forever
+    inet6 fe80::216:3eff:fe64:22a8/64 scope link 
+       valid_lft forever preferred_lft forever
+[?2004h]0;root@my-container: ~root@my-container:~# apt-get install apache2
+[?2004l
+
+Reading package lists... 0%
+
+Reading package lists... 0%
+
+Reading package lists... 0%
+
+Reading package lists... 4%
+
+Reading package lists... 4%
+
+Reading package lists... 6%
+
+Reading package lists... 6%
+
+Reading package lists... 7%
+
+Reading package lists... 7%
+
+Reading package lists... 7%
+
+Reading package lists... 7%
+
+Reading package lists... 18%
+
+Reading package lists... 18%
+
+Reading package lists... 25%
+
+Reading package lists... 25%
+
+Reading package lists... 26%
+
+Reading package lists... 43%
+
+Reading package lists... 43%
+
+Reading package lists... 54%
+
+Reading package lists... 54%
+
+Reading package lists... 56%
+
+Reading package lists... 64%
+
+Reading package lists... 64%
+
+Reading package lists... 72%
+
+Reading package lists... 72%
+
+Reading package lists... 89%
+
+Reading package lists... 89%
+
+Reading package lists... 89%
+
+Reading package lists... 99%
+
+Reading package lists... 99%
+
+Reading package lists... Done
+
+
+Building dependency tree... 0%
+
+Building dependency tree... 0%
+
+Building dependency tree... 0%
+
+Building dependency tree... 50%
+
+Building dependency tree... 50%
+
+Building dependency tree... Done
+
+
+Reading state information... 0% 
+
+Reading state information... 0%
+
+Reading state information... Done
+
+The following additional packages will be installed:
+  apache2-bin apache2-data apache2-utils bzip2 libapr1 libaprutil1
+  libaprutil1-dbd-sqlite3 libaprutil1-ldap liblua5.3-0 mailcap mime-support ssl-cert
+Suggested packages:
+  apache2-doc apache2-suexec-pristine | apache2-suexec-custom www-browser bzip2-doc
+The following NEW packages will be installed:
+  apache2 apache2-bin apache2-data apache2-utils bzip2 libapr1 libaprutil1
+  libaprutil1-dbd-sqlite3 libaprutil1-ldap liblua5.3-0 mailcap mime-support ssl-cert
+0 upgraded, 13 newly installed, 0 to remove and 0 not upgraded.
+Need to get 2142 kB of archives.
+After this operation, 8528 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+
+0% [Working]
+0% [Waiting for headers]
+                        
+Get:1 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libapr1 amd64 1.7.0-8ubuntu0.22.04.2 [108 kB]
+
+0% [1 libapr1 0 B/108 kB 0%]
+                            
+6% [Working]
+            
+Get:2 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libaprutil1 amd64 1.6.1-5ubuntu4.22.04.2 [92.8 kB]
+
+6% [2 libaprutil1 0 B/92.8 kB 0%]
+                                 
+11% [Working]
+             
+Get:3 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libaprutil1-dbd-sqlite3 amd64 1.6.1-5ubuntu4.22.04.2 [11.3 kB]
+
+11% [3 libaprutil1-dbd-sqlite3 0 B/11.3 kB 0%]
+                                              
+13% [Working]
+             
+Get:4 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libaprutil1-ldap amd64 1.6.1-5ubuntu4.22.04.2 [9170 B]
+
+13% [4 libaprutil1-ldap 0 B/9170 B 0%]
+                                      
+14% [Working]
+             
+Get:5 http://archive.ubuntu.com/ubuntu jammy/main amd64 liblua5.3-0 amd64 5.3.6-1build1 [140 kB]
+
+14% [5 liblua5.3-0 0 B/140 kB 0%]
+                                 
+21% [Working]
+             
+Get:6 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 apache2-bin amd64 2.4.52-1ubuntu4.16 [1349 kB]
+
+21% [6 apache2-bin 0 B/1349 kB 0%]
+46% [6 apache2-bin 667 kB/1349 kB 49%]
+                                      
+73% [Working]
+             
+Get:7 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 apache2-data all 2.4.52-1ubuntu4.16 [165 kB]
+
+73% [7 apache2-data 0 B/165 kB 0%]
+                                  
+81% [Working]
+             
+Get:8 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 apache2-utils amd64 2.4.52-1ubuntu4.16 [89.3 kB]
+
+81% [8 apache2-utils 0 B/89.3 kB 0%]
+                                    
+86% [Working]
+             
+Get:9 http://archive.ubuntu.com/ubuntu jammy/main amd64 mailcap all 3.70+nmu1ubuntu1 [23.8 kB]
+
+86% [9 mailcap 0 B/23.8 kB 0%]
+                              
+88% [Working]
+             
+Get:10 http://archive.ubuntu.com/ubuntu jammy/main amd64 mime-support all 3.66 [3696 B]
+
+88% [10 mime-support 0 B/3696 B 0%]
+                                   
+90% [Working]
+             
+Get:11 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 apache2 amd64 2.4.52-1ubuntu4.16 [97.9 kB]
+
+90% [11 apache2 0 B/97.9 kB 0%]
+                               
+95% [Working]
+             
+Get:12 http://archive.ubuntu.com/ubuntu jammy/main amd64 bzip2 amd64 1.0.8-5build1 [34.8 kB]
+
+95% [12 bzip2 0 B/34.8 kB 0%]
+                             
+98% [Working]
+             
+Get:13 http://archive.ubuntu.com/ubuntu jammy/main amd64 ssl-cert all 1.1.2 [17.4 kB]
+
+98% [13 ssl-cert 0 B/17.4 kB 0%]
+                                
+100% [Working]
+              
+Fetched 2142 kB in 3s (821 kB/s)
+Preconfiguring packages ...
+Selecting previously unselected package libapr1:amd64.
+(Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 34169 files and directories currently installed.)
+Preparing to unpack .../00-libapr1_1.7.0-8ubuntu0.22.04.2_amd64.deb ...
+Unpacking libapr1:amd64 (1.7.0-8ubuntu0.22.04.2) ...
+Selecting previously unselected package libaprutil1:amd64.
+Preparing to unpack .../01-libaprutil1_1.6.1-5ubuntu4.22.04.2_amd64.deb ...
+Unpacking libaprutil1:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+Selecting previously unselected package libaprutil1-dbd-sqlite3:amd64.
+Preparing to unpack .../02-libaprutil1-dbd-sqlite3_1.6.1-5ubuntu4.22.04.2_amd64.deb ...
+Unpacking libaprutil1-dbd-sqlite3:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+Selecting previously unselected package libaprutil1-ldap:amd64.
+Preparing to unpack .../03-libaprutil1-ldap_1.6.1-5ubuntu4.22.04.2_amd64.deb ...
+Unpacking libaprutil1-ldap:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+Selecting previously unselected package liblua5.3-0:amd64.
+Preparing to unpack .../04-liblua5.3-0_5.3.6-1build1_amd64.deb ...
+Unpacking liblua5.3-0:amd64 (5.3.6-1build1) ...
+Selecting previously unselected package apache2-bin.
+Preparing to unpack .../05-apache2-bin_2.4.52-1ubuntu4.16_amd64.deb ...
+Unpacking apache2-bin (2.4.52-1ubuntu4.16) ...
+Selecting previously unselected package apache2-data.
+Preparing to unpack .../06-apache2-data_2.4.52-1ubuntu4.16_all.deb ...
+Unpacking apache2-data (2.4.52-1ubuntu4.16) ...
+Selecting previously unselected package apache2-utils.
+Preparing to unpack .../07-apache2-utils_2.4.52-1ubuntu4.16_amd64.deb ...
+Unpacking apache2-utils (2.4.52-1ubuntu4.16) ...
+Selecting previously unselected package mailcap.
+Preparing to unpack .../08-mailcap_3.70+nmu1ubuntu1_all.deb ...
+Unpacking mailcap (3.70+nmu1ubuntu1) ...
+Selecting previously unselected package mime-support.
+Preparing to unpack .../09-mime-support_3.66_all.deb ...
+Unpacking mime-support (3.66) ...
+Selecting previously unselected package apache2.
+Preparing to unpack .../10-apache2_2.4.52-1ubuntu4.16_amd64.deb ...
+Unpacking apache2 (2.4.52-1ubuntu4.16) ...
+Selecting previously unselected package bzip2.
+Preparing to unpack .../11-bzip2_1.0.8-5build1_amd64.deb ...
+Unpacking bzip2 (1.0.8-5build1) ...
+Selecting previously unselected package ssl-cert.
+Preparing to unpack .../12-ssl-cert_1.1.2_all.deb ...
+Unpacking ssl-cert (1.1.2) ...
+Setting up libapr1:amd64 (1.7.0-8ubuntu0.22.04.2) ...
+Setting up bzip2 (1.0.8-5build1) ...
+Setting up ssl-cert (1.1.2) ...
+Setting up liblua5.3-0:amd64 (5.3.6-1build1) ...
+Setting up apache2-data (2.4.52-1ubuntu4.16) ...
+Setting up mailcap (3.70+nmu1ubuntu1) ...
+Setting up libaprutil1:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+Setting up mime-support (3.66) ...
+Setting up libaprutil1-ldap:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+Setting up libaprutil1-dbd-sqlite3:amd64 (1.6.1-5ubuntu4.22.04.2) ...
+Setting up apache2-utils (2.4.52-1ubuntu4.16) ...
+Setting up apache2-bin (2.4.52-1ubuntu4.16) ...
+Setting up apache2 (2.4.52-1ubuntu4.16) ...
+Enabling module mpm_event.
+Enabling module authz_core.
+Enabling module authz_host.
+Enabling module authn_core.
+Enabling module auth_basic.
+Enabling module access_compat.
+Enabling module authn_file.
+Enabling module authz_user.
+Enabling module alias.
+Enabling module dir.
+Enabling module autoindex.
+Enabling module env.
+Enabling module mime.
+Enabling module negotiation.
+Enabling module setenvif.
+Enabling module filter.
+Enabling module deflate.
+Enabling module status.
+Enabling module reqtimeout.
+Enabling conf charset.
+Enabling conf localized-error-pages.
+Enabling conf other-vhosts-access-log.
+Enabling conf security.
+Enabling conf serve-cgi-bin.
+Enabling site 000-default.
+Created symlink /etc/systemd/system/multi-user.target.wants/apache2.service → /lib/systemd/system/apache2.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/apache-htcacheclean.service → /lib/systemd/system/apache-htcacheclean.service.
+Processing triggers for ufw (0.36.1-4ubuntu0.1) ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.11) ...
+Scanning processes... [                                                                   ]
+Scanning processes... [==                                                                 ]
+Scanning processes... [====                                                               ]
+Scanning processes... [======                                                             ]
+Scanning processes... [=========                                                          ]
+Scanning processes... [===========                                                        ]
+Scanning processes... [=============                                                      ]
+Scanning processes... [================                                                   ]
+Scanning processes... [==================                                                 ]
+Scanning processes... [====================                                               ]
+Scanning processes... [=======================                                            ]
+Scanning processes... [=========================                                          ]
+Scanning processes... [===========================                                        ]
+Scanning processes... [==============================                                     ]
+Scanning processes... [================================                                   ]
+Scanning processes... [==================================                                 ]
+Scanning processes... [====================================                               ]
+Scanning processes... [=======================================                            ]
+Scanning processes... [=========================================                          ]
+Scanning processes... [===========================================                        ]
+Scanning processes... [==============================================                     ]
+Scanning processes... [================================================                   ]
+Scanning processes... [==================================================                 ]
+Scanning processes... [=====================================================              ]
+Scanning processes... [=======================================================            ]
+Scanning processes... [=========================================================          ]
+Scanning processes... [============================================================       ]
+Scanning processes... [==============================================================     ]
+Scanning processes... [================================================================   ]
+Scanning processes... [===================================================================]
+Scanning processes...                                                                      
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+[?2004h]0;root@my-container: ~root@my-container:~# 
+[?2004l
+[?2004h]0;root@my-container: ~root@my-container:~# 
+[?2004l
+[?2004h]0;root@my-container: ~root@my-container:~# sus[K[K[Ksystemctl status apache2
+[?2004l
+[?1h=
+[0;1;32m●[0m apache2.service - The Apache HTTP Server[m
+     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)[m
+     Active: [0;1;32mactive (running)[0m since Sun 2025-10-12 07:08:09 UTC; 58s ago[m
+       Docs: https://httpd.apache.org/docs/2.4/[m
+   Main PID: 1511 (apache2)[m
+      Tasks: 55 (limit: 2240)[m
+     Memory: 6.3M[m
+     CGroup: /system.slice/apache2.service[m
+             ├─1511 /usr/sbin/apache2 -k start[m
+             ├─1513 /usr/sbin/apache2 -k start[m
+             └─1514 /usr/sbin/apache2 -k start[m
+[m
+Oct 12 07:08:09 my-container systemd[1]: Starting The Apache HTTP Server...[m
+Oct 12 07:08:09 my-container systemd[1]: Started The Apache HTTP Server.[m
+
+[K[?1l>[?2004h]0;root@my-container: ~root@my-container:~# exit
+[?2004l
+exit
+]0;user@user-VirtualBox: ~user@user-VirtualBox:~$ exit
+
+Script done on 2025-10-12 14:09:16+07:00 [COMMAND_EXIT_CODE="0"]
