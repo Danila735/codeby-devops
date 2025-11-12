@@ -1,0 +1,7 @@
+---
+- name: Перезапуск Apache
+  ansible.builtin.service:
+    name: apache2
+    state: restarted
+  become: yes
+# handlers file for webserver
