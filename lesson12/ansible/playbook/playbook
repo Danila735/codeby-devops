@@ -1,0 +1,28 @@
+---
+- name: Установка и запуск Nginx
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Установка пакетов wget, htop и apache2
+      ansible.builtin.package:
+        name:
+          - wget
+          - htop
+          - apache2
+        state: present
+
+    - name: Проверка состояния Apache2
+      ansible.builtin.systemd:
+        name: apache2
+        state: started
+        enabled: true
+
+    - name: Проверка, что сервер запущен
+      ansible.builtin.command: systemctl status apache2
+      register: apache2_status
+      ignore_errors: yes
+
+    - name: Вывод статуса Apache2
+      ansible.builtin.debug:
+        var: apache2_status.stdout
