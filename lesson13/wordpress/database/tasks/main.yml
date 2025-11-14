@@ -1,0 +1,30 @@
+---
+- name: Установка MariaDB сервера
+  ansible.builtin.apt:
+    name: mariadb-server
+    state: present
+    update_cache: yes
+  become: yes
+
+- name: Запуск службы MariaDB
+  ansible.builtin.service:
+    name: mariadb
+    state: started
+    enabled: yes
+  become: yes
+
+- name: Создание базы данных WordPress
+  community.mysql.mysql_db:
+    name: "{{ db_name }}"
+    state: present
+  become: yes
+  register: db_creation
+
+- name: Создание пользователя базы данных WordPress
+  community.mysql.mysql_user:
+    name: "{{ db_user }}"
+    password: "{{ db_password }}"
+    priv: "{{ db_name }}.*:ALL"
+    state: present
+  become: yes
+# tasks file for database

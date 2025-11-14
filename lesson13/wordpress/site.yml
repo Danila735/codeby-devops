@@ -1,0 +1,10 @@
+---
+- name: Deploy WordPress application
+  hosts: all
+  become: true # Запускать задачи с правами суперпользователя (sudo)
+  gather_facts: true
+
+  roles:
+    # Здесь перечисляются имена ваших ролей
+    - webserver        # Например, роль для установки Nginx/Apache, PHP, MariaDB
+    - database         # Роль для загрузки и настройки самого WordPress
