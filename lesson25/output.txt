@@ -1,0 +1,72 @@
+Started by user admin
+Running in Durability level: MAX_SURVIVABILITY
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on maven-agent-01 in /home/jenkins/agent/workspace/maven-app-build
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] git
+Selected Git installation: default
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-auth-hexurl github.com # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url github.com # timeout=10
+Fetching upstream changes from github.com
+...
+Checking out Revision a1b2c3d4e5f6 (refs/remotes/origin/main)
+[Pipeline] }
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] withMaven
+[withMaven] Choice of Maven installation: M3
+[withMaven] Choice of JDK installation: Inherit from agent
+[Pipeline] {
+[Pipeline] sh
++ mvn clean install
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.example:maven-app >-------------------
+[INFO] Building maven-app 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ maven-app ---
+[INFO] Deleting /home/jenkins/agent/workspace/maven-app-build/target
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ maven-app ---
+[INFO] Using 'UTF-8' encoding to copy resources.
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ maven-app ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /home/jenkins/agent/workspace/maven-app-build/target/classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.1:test (default-test) @ maven-app ---
+[INFO] Running com.example.AppTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.05 s - in com.example.AppTest
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ maven-app ---
+[INFO] Building jar: /home/jenkins/agent/workspace/maven-app-build/target/maven-app-1.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ maven-app ---
+[INFO] Installing /home/jenkins/agent/workspace/maven-app-build/target/maven-app-1.0-SNAPSHOT.jar to /home/jenkins/.m2/repository/com/example/maven-app/1.0-SNAPSHOT/maven-app-1.0-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.567 s
+[INFO] Finished at: 2025-12-27T16:15:00Z
+[INFO] ------------------------------------------------------------------------
+[Pipeline] }
+[withMaven] Publishers execution: ...
+[Pipeline] // withMaven
+[Pipeline] }
+[Pipeline] stage
+[Pipeline] { (Archive)
+[Pipeline] archiveArtifacts
+Archiving artifacts
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
