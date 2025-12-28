@@ -1,0 +1,67 @@
+pipeline {
+    agent any // Или agent { label 'my-agent' } для конкретного агента
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        stage('Build & Test Hello World!') {
+            parallel {
+                stage('Build Hello World!') {
+                    steps {
+                        sh 'cd 'Hello World!' && mvn clean install' // Пример для Maven
+                    }
+                }
+                stage('Test Hello World!') {
+                    steps {
+                        sh 'cd 'Hello World!' && mvn test' // Пример для Maven
+                    }
+                }
+            }
+        }
+        stage('Build & Test Hello Jenkins!') {
+            parallel {
+                stage('Build Hello Jenkins!') {
+                    steps {
+                        sh 'cd 'Hello Jenkins!' && npm install && npm run build' // Пример для Node.js
+                    }
+                }
+                stage('Test Hello Jenkins!') {
+                    steps {
+                        sh 'cd 'Hello Jenkins!' && npm test' // Пример для Node.js
+                    }
+                }
+            }
+        }
+        stage('Deploy All') {
+            when { branch 'main' } // Деплой только из main ветки
+            steps {
+                script {
+                    // Запускаем деплой параллельно
+                    parallel(
+                        deploy_app1: {
+                            sshagent(credentials: ['production-ssh-key']) {
+                                sh 'ssh deploy@server1 "cd /path/to/app1 && git pull && systemctl restart app1"'
+                            }
+                        },
+                        deploy_app2: {
+                            sshagent(credentials: ['production-ssh-key']) {
+                                sh 'ssh deploy@server2 "cd /path/to/app2 && git pull && systemctl restart app2"'
+                            }
+                        }
+                    )
+                }
+            }
+        }
+    }
+    post {
+        always {
+            // Очистка, оповещения
+        }
+        failure {
+            // Откат или другие действия при падении
+            echo 'Pipeline failed. Performing rollback...'
+        }
+    }
+}
