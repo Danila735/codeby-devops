@@ -1,0 +1,52 @@
+pipeline {
+    agent any
+
+    environment {
+        // Имя сервера из настроек Jenkins
+        SONAR_SCANNER = 'SonarQube' 
+    }
+
+    stages {
+        stage('Build & Test') {
+            steps {
+                echo 'Building Hello Jenkins! and Hello Devops!...'
+                // Пример для Java/Maven, замените на ваш стек
+                sh 'echo "Compile and run unit tests"'
+            }
+        }
+
+        stage('SonarQube Analysis') {
+            steps {
+                script {
+                    def scannerHome = tool 'SonarScanner' // Имя инсталлятора в Global Tool Configuration
+                    withSonarQubeEnv("${SONAR_SCANNER}") {
+                        sh "${scannerHome}/bin/sonar-scanner \
+                        -Dsonar.projectKey=hello-jenkins-devops \
+                        -Dsonar.sources=. \
+                        -Dsonar.host.url=${SONAR_HOST_URL} \
+                        -Dsonar.login=${SONAR_AUTH_TOKEN}"
+                    }
+                }
+            }
+        }
+
+        stage('Quality Gate') {
+            steps {
+                timeout(time: 5, unit: 'MINUTES') {
+                    // Ожидание ответа от SonarQube (требует Webhook в SonarQube на Jenkins)
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
+
+        stage('Deploy') {
+            when {
+                branch 'main' // Деплой только из основной ветки
+            }
+            steps {
+                echo 'Deploying Hello Jenkins!...'
+                echo 'Deploying Hello Devops!...'
+            }
+        }
+    }
+}
