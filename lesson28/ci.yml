@@ -1,0 +1,32 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  # Job для приложения Hello World!
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Hello World
+        run: echo "Running Hello World! Application..."
+
+  # Job для приложения Hello Jenkins!
+  hello-jenkins:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Hello Jenkins
+        run: echo "Running Hello Jenkins! Application..."
+
+  # Job для приложения Hello Devops!
+  hello-devops:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Hello Devops
+        run: echo "Running Hello Devops! Application..."
