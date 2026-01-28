@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: selenium-chrome-service
+spec:
+  type: NodePort # Или LoadBalancer, если в облаке
+  selector:
+    app: selenium-chrome
+  ports:
+    - name: webdriver
+      port: 4444
+      targetPort: 4444
+    - name: vnc
+      port: 7900
+      targetPort: 7900
