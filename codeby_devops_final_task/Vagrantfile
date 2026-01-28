@@ -1,0 +1,46 @@
+Vagrant.configure("2") do |config|
+  # Используем Ubuntu 24.04 LTS (Noble Numbat)
+  config.vm.box = "ubuntu/noble64"
+
+  # Настройка сети: статический IP, чтобы удобно заходить в Prometheus/Grafana
+  config.vm.network "private_network", ip: "192.168.137.10"
+
+  # Настройка ресурсов (для Selenium и Prometheus лучше выделить больше RAM)
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = "4096"
+    vb.cpus = 2
+    vb.name = "monitoring_server_noble"
+  end
+
+  # 1. Сначала ставим базовые сервисы (Docker, CI/CD)
+  config.vm.provision "shell", path: "install_docker.sh"
+  config.vm.provision "shell", path: "install_selenium_container.sh"
+  config.vm.provision "shell", path: "install_gitlab-runner.sh"
+
+  # 2. Установка и настройка Prometheus
+  config.vm.provision "shell", path: "install_prometheus.sh"
+  config.vm.provision "shell", path: "create_service_prometheus.sh"
+
+  # 3. Установка и настройка экспортеров
+  config.vm.provision "shell", path: "install_node_exporter.sh"
+  config.vm.provision "shell", path: "create_service_node_exporter.sh"
+  config.vm.provision "shell", path: "install_cadvisor.sh"
+  config.vm.provision "shell", path: "create_service_cadvisor.sh"
+
+  # 4. Установка и настройка Alertmanager
+  config.vm.provision "shell", path: "install_alertmanager.sh"
+  config.vm.provision "shell", path: "create_service_alertmanager.sh"
+
+  # 5. Установка и настройка Grafana
+  config.vm.provision "shell", path: "install_grafana.sh"
+  config.vm.provision "shell", path: "service_grafana.sh"
+
+  # Инфо-сообщение после запуска
+  config.vm.post_up_message = "Сервер поднят! Prometheus: http://192.168.137.10:9090 | Grafana: http://192.168.137.10:3000"
+end
+
+  # 6. Установка тестового контейнера
+   config.vm.provision "shell", path: "install_test_container.sh"
+
+  # 7. Установка Minikube и Kubectl
+  config.vm.provision "shell", path: "install_minikube.sh"

@@ -1,0 +1,23 @@
+default:
+  image: docker:latest
+
+services:
+  - name: docker:dind
+    # Это важно: указываем алиас, чтобы клиент знал, куда обращаться
+    alias: docker 
+
+variables:
+  # Указываем клиенту подключаться к сервису по протоколу TCP без TLS
+  DOCKER_HOST: tcp://docker:2375
+  # Отключаем TLS для простоты (если ваш Runner не настроен иначе)
+  DOCKER_TLS_CERTDIR: ""
+
+stages:
+    - test
+
+test run:
+    stage: test
+    script:
+        - docker build -t image-test --no-cache .
+        - docker run --name test --shm-size=2g --rm image-test:latest
+    when: manual

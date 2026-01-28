@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: selenium-chrome
+  labels:
+    app: selenium-chrome
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: selenium-chrome
+  template:
+    metadata:
+      labels:
+        app: selenium-chrome
+    spec:
+      containers:
+      - name: selenium-chrome
+        image: selenium/standalone-chrome:122.0-20240221 # Версия 144 еще не вышла, указал ближайшую стабильную (проверьте тег)
+        ports:
+        - containerPort: 4444
+        - containerPort: 7900
+        env:
+        - name: SE_NODE_MAX_SESSIONS
+          value: "2"
+        - name: SE_NODE_OVERRIDE_MAX_SESSIONS
+          value: "true"
+        resources:
+          limits:
+            cpu: "1"
+            memory: "2Gi"
+          requests:
+            cpu: "500m"
+            memory: "1Gi"
